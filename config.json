@@ -1,0 +1,27 @@
+{
+  "host": "127.0.0.1",
+  "port": 3306,
+  "database": "inmall",
+  "username": "inmall",
+  "password": "inmall",
+  "charset": "utf8",
+  "namespace": "com.shixinke.inmall",
+  "layers": [
+    "web",
+    "facade",
+    "facade.impl",
+    "service",
+    "service.impl",
+    "mapper",
+    "vo",
+    "dto",
+    "do",
+    "query",
+    "config",
+    "component",
+    "util",
+    "enum",
+    "interceptor",
+    "exception"
+  ]
+}
