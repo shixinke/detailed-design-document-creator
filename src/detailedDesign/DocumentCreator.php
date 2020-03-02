@@ -156,7 +156,9 @@ class DocumentCreator {
         $content .= "&nbsp;&nbsp;&nbsp;&nbsp;\|- page |Integer | 当前页码 |\n";
         $content .= "&nbsp;&nbsp;&nbsp;&nbsp;\|- pageSize |Integer | 每页显示数 |\n";
         $content .= "&nbsp;&nbsp;&nbsp;&nbsp;\|- list |List | 数据列表 |\n";
-        $content .= $apiRows;
+        $content .= $apiRows."\n";
+        $content .= "- 示例\n";
+        $content .= "```\n{\n&nbsp;&nbsp;&nbsp;&nbsp;\"code\":200, \n&nbsp;&nbsp;&nbsp;&nbsp;\"message\":\"success\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"success\":true, \n&nbsp;&nbsp;&nbsp;&nbsp;\"data\":{\n\"total\":20,\n\"pages\":2,\n\"page\":1,\n\"pageSize\":10,\n\"list\":[\n".json_encode($bodyJson)."\n]}}\n```\n\n";
         $content .= "#### 2.".$this->indexTables[$prefix].".2 添加".$row['comment']."\n\n";
         $content .= "**(1)接口描述**\n\n";
         $content .= "添加".$row['comment']."\n\n";
@@ -176,7 +178,9 @@ class DocumentCreator {
         $content .= "message | String | 提示信息 | \n";
         $content .= "success | boolean | 是否成功 | \n";
         $content .= "data | Object | 返回的主体信息 |\n";
-        $content .= "#### 2".$this->indexTables[$prefix].".3 查询".$row['comment']."详情\n\n";
+        $content .= "- 示例\n";
+        $content .= "```{\"code\":200, \"message\":\"success\",\"success\":true}```\n\n";
+        $content .= "#### 2.".$this->indexTables[$prefix].".3 查询".$row['comment']."详情\n\n";
         $content .= "**(1)接口描述**\n\n";
         $content .= "查询".$row['comment']."详情\n\n";
         $content .= "**(2)接口地址**\n\n";
@@ -198,6 +202,8 @@ class DocumentCreator {
         $content .= "success | boolean | 是否成功 | \n";
         $content .= "data | Object | 返回的主体信息 |\n";
         $content .= $detailRows;
+        $content .= "- 示例\n";
+        $content .= "```{\"code\":200, \"message\":\"success\",\"success\":true, \"data\":".json_encode($bodyJson)."}```\n\n";
         $content .= "#### 2.".$this->indexTables[$prefix].".4 更新".$row['comment']."\n\n";
         $content .= "**(1)接口描述**\n\n";
         $content .= "更新".$row['comment']."\n\n";
@@ -217,6 +223,8 @@ class DocumentCreator {
         $content .= "message | String | 提示信息 | \n";
         $content .= "success | boolean | 是否成功 | \n";
         $content .= "data | Object | 返回的主体信息 |\n";
+        $content .= "- 示例\n";
+        $content .= "```{\"code\":200, \"message\":\"success\",\"success\":true}```\n\n";
         $content .= "#### 2.".$this->indexTables[$prefix].".5 删除".$row['comment']."\n\n";
         $content .= "**(1)接口描述**\n\n";
         $content .= "删除".$row['comment']."\n\n";
@@ -237,6 +245,8 @@ class DocumentCreator {
         $content .= "message | String | 提示信息 | \n";
         $content .= "success | boolean | 是否成功 | \n";
         $content .= "data | Object | 返回的主体信息 |\n";
+        $content .= "- 示例\n";
+        $content .= "```{\"code\":200, \"message\":\"success\",\"success\":true}```\n\n";
         $content .= "#### 2.".$this->indexTables[$prefix].".6 启用/禁用".$row['comment']."\n\n";
         $content .= "**(1)接口描述**\n\n";
         $content .= "启用/禁用".$row['comment']."状态\n\n";
@@ -258,6 +268,8 @@ class DocumentCreator {
         $content .= "message | String | 提示信息 | \n";
         $content .= "success | boolean | 是否成功 | \n";
         $content .= "data | Object | 返回的主体信息 |\n";
+        $content .= "- 示例\n";
+        $content .= "```{\"code\":200, \"message\":\"success\",\"success\":true}```\n\n";
         $this->apiMap[$prefix] .= $content;
         $processContent = "### 4.".$this->indexTables[$prefix]." ".$row['comment']."管理\n\n";
         $processContent .= "#### 4.".$this->indexTables[$prefix].".1 查询".$row['comment']."列表\n\n";
